@@ -11,12 +11,10 @@ class nap:
     def add_student(self, student):
         if len(self.studs) < self.p:
             self.studs.append(student)
-            #self.studs.sort(key=lambda x: x.ss)
             self.minscore = min(self.studs, key=lambda x: x.ss).ss
             return True
         elif self.minscore < student.ss:
             self.studs.append(student)
-            #self.studs.sort(key=lambda x: x.ss)
             self.studs.remove(min(self.studs, key=lambda x: x.ss))
             return True
         else: return False
