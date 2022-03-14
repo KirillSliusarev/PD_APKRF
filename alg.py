@@ -16,6 +16,7 @@ class nap:
         elif self.minscore < student.ss:
             self.studs.append(student)
             self.studs.remove(min(self.studs, key=lambda x: x.ss))
+            self.minscore = min(self.studs, key=lambda x: x.ss).ss
             return True
         else: return False
 
