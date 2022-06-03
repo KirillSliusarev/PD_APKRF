@@ -1,3 +1,5 @@
+#Библиотека классов
+
 class student:
     studslist = []
     lgotlist = []

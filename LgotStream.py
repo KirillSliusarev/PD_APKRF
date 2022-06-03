@@ -1,12 +1,19 @@
 from classes import nap, student
 import mysql.connector
+import os
 
+HOST = os.getenv('SQL_HOST')
+USER = os.getenv('SQL_USER')
+PASSWORD = os.getenv('SQL_PASSWORD')
+
+
+#Поток льготников
 
 try:
     with mysql.connector.connect(
-            host="localhost",
-            user="root",
-            password="root",
+            host=HOST,
+            user=USER,
+            password=PASSWORD,
             database="apkrf",
     ) as connection:
         with connection.cursor() as cursor:
@@ -32,9 +39,9 @@ for j in range(len(nap.naplist)):
 
 try:
     with mysql.connector.connect(
-            host="localhost",
-            user="root",
-            password="root",
+            host=HOST,
+            user=USER,
+            password=PASSWORD,
             database="apkrf",
     ) as connection:
         with connection.cursor() as cursor:
